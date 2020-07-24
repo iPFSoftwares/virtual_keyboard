@@ -29,6 +29,9 @@ class VirtualKeyboard extends StatefulWidget {
   /// Set to true if you want only to show Caps letters.
   final bool alwaysCaps;
 
+  /// Specify font weight of keys
+  final FontWeight fontWeight;
+
   VirtualKeyboard(
       {Key key,
       @required this.type,
@@ -37,6 +40,7 @@ class VirtualKeyboard extends StatefulWidget {
       this.height = _virtualKeyboardDefaultHeight,
       this.textColor = Colors.black,
       this.fontSize = 14,
+      this.fontWeight = FontWeight.normal,
       this.alwaysCaps = false})
       : super(key: key);
 
@@ -77,6 +81,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
       textStyle = TextStyle(
         fontSize: fontSize,
         color: textColor,
+        fontWeight: fontWeight,
       );
     });
   }
@@ -96,6 +101,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
     textStyle = TextStyle(
       fontSize: fontSize,
       color: textColor,
+      fontWeight: fontWeight,
     );
   }
 
