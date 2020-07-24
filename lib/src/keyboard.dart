@@ -59,6 +59,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
   double height;
   Color textColor;
   double fontSize;
+  FontWeight fontWeight;
   bool alwaysCaps;
   // Text Style for keys.
   TextStyle textStyle;
@@ -95,6 +96,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
     height = widget.height;
     textColor = widget.textColor;
     fontSize = widget.fontSize;
+    fontWeight = widget.fontWeight;
     alwaysCaps = widget.alwaysCaps;
 
     // Init the Text Style for keys.
