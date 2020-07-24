@@ -24,7 +24,7 @@ class VirtualKeyboard extends StatefulWidget {
   final double fontSize;
 
   /// The builder function will be called for each Key object.
-  final Widget Function(BuildContext context, VirtualKeyboardKey key) builder;
+  final Widget Function(BuildContext context, VirtualKeyboardKey key, double itemHeight) builder;
 
   /// Set to true if you want only to show Caps letters.
   final bool alwaysCaps;
@@ -55,7 +55,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
   VirtualKeyboardType type;
   Function onKeyPress;
   // The builder function will be called for each Key object.
-  Widget Function(BuildContext context, VirtualKeyboardKey key) builder;
+  Widget Function(BuildContext context, VirtualKeyboardKey key, double itemHeight) builder;
   double height;
   Color textColor;
   double fontSize;
@@ -180,7 +180,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
                 }
               } else {
                 // Call the builder function, so the user can specify custom UI for keys.
-                keyWidget = builder(context, virtualKeyboardKey);
+                keyWidget = builder(context, virtualKeyboardKey, height / _keyRows.length);
 
                 if (keyWidget == null) {
                   throw 'builder function must return Widget';
