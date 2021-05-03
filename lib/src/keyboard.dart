@@ -55,7 +55,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
   VirtualKeyboardType type;
   Function onKeyPress;
   // The builder function will be called for each Key object.
-  Widget Function(BuildContext context, VirtualKeyboardKey key, double itemHeight) builder;
+  Widget Function(BuildContext context, VirtualKeyboardKey key, double itemHeight, Function onKeyPress) builder;
   double height;
   Color textColor;
   double fontSize;
