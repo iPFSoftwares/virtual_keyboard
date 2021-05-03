@@ -183,7 +183,19 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
                 keyWidget = builder(context, virtualKeyboardKey, height / _keyRows.length);
 
                 if (keyWidget == null) {
-                  throw 'builder function must return Widget';
+                  // throw 'builder function must return Widget';
+                  
+                  // Check the key type.
+                  switch (virtualKeyboardKey.keyType) {
+                    case VirtualKeyboardKeyType.String:
+                      // Draw String key.
+                      keyWidget = _keyboardDefaultKey(virtualKeyboardKey);
+                      break;
+                    case VirtualKeyboardKeyType.Action:
+                      // Draw action key.
+                      keyWidget = _keyboardDefaultActionKey(virtualKeyboardKey);
+                      break;
+                  }
                 }
               }
 
